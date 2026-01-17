@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products | Tech House</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">Tech House</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="support.html">Support</a>
+        <a href="cart.html" class="nav-cart">Cart <span class="cart-count" data-cart-count>0</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="section">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a> <span aria-hidden="true">/</span> <span>Products</span>
+      </nav>
+      <div class="page-header">
+        <div>
+          <h1>Browse products</h1>
+          <p>Filter by category or search for a specific model.</p>
+        </div>
+      </div>
+
+      <div class="filters">
+        <label class="field">
+          <span class="field-label">Search</span>
+          <input type="search" id="searchInput" placeholder="Search products" />
+        </label>
+        <label class="field">
+          <span class="field-label">Category</span>
+          <select id="categoryFilter">
+            <option value="all">All categories</option>
+            <option>Kitchen Appliances</option>
+            <option>Cleaning Devices</option>
+            <option>Heating &amp; Cooling</option>
+            <option>Personal Care</option>
+            <option>Smart Home</option>
+          </select>
+        </label>
+      </div>
+
+      <section aria-live="polite">
+        <div class="grid product-grid" id="productGrid"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Tech House</h3>
+        <p>Trusted home appliance experts with in-store pickup and fast delivery.</p>
+      </div>
+      <div>
+        <h4>Policies</h4>
+        <ul>
+          <li><a href="support.html#delivery">Delivery policy</a></li>
+          <li><a href="support.html#returns">Returns policy</a></li>
+          <li><a href="support.html#warranty">Warranty policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Opening hours</h4>
+        <p>Mon–Sat: 9:00 AM – 8:00 PM</p>
+        <p>Sun: 10:00 AM – 6:00 PM</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
