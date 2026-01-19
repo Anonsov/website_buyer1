@@ -19,7 +19,7 @@ const PRODUCTS = [
     availability: "In stock",
     features: ["Sensor cooking", "Quick defrost", "Child lock"],
     image:
-      "https://images.unsplash.com/photo-1585655851121-d4793d782f54?auto=format&fit=crop&w=700&q=80",
+      "https://plus.unsplash.com/premium_photo-1687840719567-ab6c4da96f67?q=80&w=794&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: "steam-cleaner-s1",
@@ -30,7 +30,7 @@ const PRODUCTS = [
     availability: "In stock",
     features: ["Multi-surface heads", "Lightweight body", "Fast heat-up"],
     image:
-      "https://images.unsplash.com/photo-1527515637462-daf3f5eb764a?auto=format&fit=crop&w=700&q=80",
+      "https://media.istockphoto.com/id/1407684500/photo/household-steam-cleaner-close-up-the-device-produces-steam-for-disinfection-from-germs-dirt.webp?s=2048x2048&w=is&k=20&c=CksMXmoGt2b8XyJRZ5c6QA-nqAGFzDC75nhMwVyQZZA=",
   },
   {
     id: "vacuum-max-v7",
@@ -96,7 +96,7 @@ const PRODUCTS = [
     availability: "In stock",
     features: ["App scheduling", "Temperature presets", "Keep warm"],
     image:
-      "https://images.unsplash.com/photo-1509463531436-19fd0c21b36b?auto=format&fit=crop&w=700&q=80",
+      "https://media.istockphoto.com/id/1483425375/photo/metal-electric-kettle-isolated-on-white-background.jpg?s=2048x2048&w=is&k=20&c=fb5VAmSmInwg1hkYnCPnNOQVE1aXq-V2xvcpNXam0lA=",
   },
   {
     id: "air-purifier-cloud",
@@ -118,7 +118,7 @@ const PRODUCTS = [
     availability: "In stock",
     features: ["12L capacity", "Energy efficient", "Quiet compressor"],
     image:
-      "https://images.unsplash.com/photo-1527515862127-a59d9d04d55b?auto=format&fit=crop&w=700&q=80",
+      "https://images.unsplash.com/photo-1643705314142-6f072c3d48fa?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: "robot-mop-swift",
