@@ -7,6 +7,8 @@ const PRODUCTS = [
     rating: 4.6,
     availability: "In stock",
     features: ["900W motor", "6 speed settings", "BPA-free pitcher"],
+    image:
+      "https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=700&q=80",
   },
   {
     id: "smart-microwave-25l",
@@ -16,6 +18,8 @@ const PRODUCTS = [
     rating: 4.4,
     availability: "In stock",
     features: ["Sensor cooking", "Quick defrost", "Child lock"],
+    image:
+      "https://images.unsplash.com/photo-1585655851121-d4793d782f54?auto=format&fit=crop&w=700&q=80",
   },
   {
     id: "steam-cleaner-s1",
@@ -25,6 +29,8 @@ const PRODUCTS = [
     rating: 4.2,
     availability: "In stock",
     features: ["Multi-surface heads", "Lightweight body", "Fast heat-up"],
+    image:
+      "https://images.unsplash.com/photo-1527515637462-daf3f5eb764a?auto=format&fit=crop&w=700&q=80",
   },
   {
     id: "vacuum-max-v7",
@@ -34,6 +40,8 @@ const PRODUCTS = [
     rating: 4.7,
     availability: "In stock",
     features: ["HEPA filtration", "Cordless design", "45-min runtime"],
+    image:
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=700&q=80",
   },
   {
     id: "tower-fan-breeze",
@@ -43,6 +51,8 @@ const PRODUCTS = [
     rating: 4.3,
     availability: "In stock",
     features: ["Quiet mode", "Remote control", "3 airflow settings"],
+    image:
+      "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=700&q=80",
   },
   {
     id: "compact-heater-h2",
@@ -52,6 +62,8 @@ const PRODUCTS = [
     rating: 4.1,
     availability: "Out of stock",
     features: ["Auto shutoff", "Energy saver", "Desktop size"],
+    image:
+      "https://images.unsplash.com/photo-1521401292936-0a2129a30b1c?auto=format&fit=crop&w=700&q=80",
   },
   {
     id: "hair-dryer-airlite",
@@ -61,6 +73,8 @@ const PRODUCTS = [
     rating: 4.5,
     availability: "In stock",
     features: ["Ionic technology", "Foldable handle", "Cool shot"],
+    image:
+      "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=700&q=80",
   },
   {
     id: "steam-iron-smooth",
@@ -70,6 +84,8 @@ const PRODUCTS = [
     rating: 4.0,
     availability: "In stock",
     features: ["Ceramic soleplate", "Anti-drip", "Self-clean"],
+    image:
+      "https://images.unsplash.com/photo-1505577058444-a3dab90d4253?auto=format&fit=crop&w=700&q=80",
   },
   {
     id: "smart-kettle-kconnect",
@@ -79,6 +95,8 @@ const PRODUCTS = [
     rating: 4.6,
     availability: "In stock",
     features: ["App scheduling", "Temperature presets", "Keep warm"],
+    image:
+      "https://images.unsplash.com/photo-1509463531436-19fd0c21b36b?auto=format&fit=crop&w=700&q=80",
   },
   {
     id: "air-purifier-cloud",
@@ -88,6 +106,8 @@ const PRODUCTS = [
     rating: 4.3,
     availability: "In stock",
     features: ["Air quality sensor", "Sleep mode", "Smart alerts"],
+    image:
+      "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=700&q=80",
   },
   {
     id: "mini-fridge-chill",
@@ -97,6 +117,8 @@ const PRODUCTS = [
     rating: 4.2,
     availability: "In stock",
     features: ["12L capacity", "Energy efficient", "Quiet compressor"],
+    image:
+      "https://images.unsplash.com/photo-1527515862127-a59d9d04d55b?auto=format&fit=crop&w=700&q=80",
   },
   {
     id: "robot-mop-swift",
@@ -106,6 +128,8 @@ const PRODUCTS = [
     rating: 4.4,
     availability: "In stock",
     features: ["Auto mapping", "Wet + dry modes", "Smart schedule"],
+    image:
+      "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&w=700&q=80",
   },
 ];
 
@@ -150,7 +174,7 @@ const createProductCard = (product) => {
   const card = document.createElement("article");
   card.className = "card product-card";
   card.innerHTML = `
-    <div class="placeholder-img" aria-hidden="true"></div>
+    <img class="media-img" src="${product.image}" alt="${product.name}" loading="lazy" />
     <h3>${product.name}</h3>
     <p class="price">${formatCurrency(product.price)}</p>
     <p class="rating">${product.rating} ★</p>
@@ -216,7 +240,7 @@ const initProductDetailPage = () => {
   detailContainer.innerHTML = `
     <div class="product-detail">
       <div class="card">
-        <div class="placeholder-img large" aria-hidden="true"></div>
+        <img class="media-img large" src="${product.image}" alt="${product.name}" loading="lazy" />
       </div>
       <div class="card">
         <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -267,7 +291,7 @@ const initCartPage = () => {
       const row = document.createElement("div");
       row.className = "cart-item";
       row.innerHTML = `
-        <div class="placeholder-img" aria-hidden="true"></div>
+        <img class="media-img small" src="${product.image}" alt="${product.name}" loading="lazy" />
         <div>
           <h3>${product.name}</h3>
           <p class="price">${formatCurrency(product.price)}</p>
