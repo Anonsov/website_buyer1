@@ -14,16 +14,24 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="logo" href="index.html">Tech House</a>
-      <nav class="site-nav" aria-label="Main">
+      <!-- Mobile menu toggle button -->
+      <button class="menu-toggle mobile-only" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle menu">
+        <!-- Simple hamburger icon -->
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <nav class="site-nav" id="primary-nav" aria-label="Main">
         <a href="index.html">Home</a>
         <a href="products.html">Products</a>
         <a href="support.html">Support</a>
         <a href="cart.html" class="nav-cart">Cart <span class="cart-count" data-cart-count>0</span></a>
+        <!-- Mobile actions inside menu -->
+        <div class="nav-actions mobile-only">
+          <a class="btn secondary" href="tel:+18005550123">Call</a>
+          <a class="btn primary" href="mailto:support@techhouse.com">Email</a>
+        </div>
       </nav>
-      <div class="header-actions mobile-only">
-        <a class="btn secondary" href="tel:+18005550123">Call</a>
-        <a class="btn primary" href="mailto:support@techhouse.com">Email</a>
-      </div>
     </div>
   </header>
 
@@ -68,7 +76,7 @@
         <div class="grid categories-grid">
           <a class="card category-card" href="products.html?category=Kitchen%20Appliances">
             <img
-              src="https://images.unsplash.com/photo-1586201375761-83865001e17b?auto=format&fit=crop&w=600&q=80"
+              src="https://imgs.search.brave.com/O0znK2b1vzn_mJIU77HrD1Yx8OiMd2SsRPdx302-fkQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9tb2Rlcm4ta2l0/Y2hlbi1ob21lLWFw/cGxpYW5jZXMtYmFj/a2dyb3VuZC1raXRj/aGVuLWludGVyaW9y/XzQ0MTkyMy0xMjAy/OC5qcGc_c2VtdD1h/aXNfaHlicmlkJnc9/NzQwJnE9ODA"
               alt="Kitchen appliances on a counter"
               class="media-img"
               loading="lazy"
@@ -77,7 +85,7 @@
           </a>
           <a class="card category-card" href="products.html?category=Cleaning%20Devices">
             <img
-              src="https://images.unsplash.com/photo-1527515637462-daf3f5eb764a?auto=format&fit=crop&w=600&q=80"
+              src="https://imgs.search.brave.com/s6agqPTUJ9xoaNzTAUBC488EnILcMMm6pflQt6mygwo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvaGQvY2xl/YW5pbmctcGljdHVy/ZXMtODkxLXgtMTAy/My1oOHdtcXZ0NXhp/M2JycWhsLmpwZw"
               alt="Cleaning tools and a vacuum"
               class="media-img"
               loading="lazy"

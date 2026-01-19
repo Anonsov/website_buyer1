@@ -19,7 +19,7 @@ const PRODUCTS = [
     availability: "In stock",
     features: ["Sensor cooking", "Quick defrost", "Child lock"],
     image:
-      "https://images.unsplash.com/photo-1585655851121-d4793d782f54?auto=format&fit=crop&w=700&q=80",
+      "https://imgs.search.brave.com/w8Agw6z50pl-AqzJA_mxJv4MTNQdTRa_sgzvY_VJus4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/c21hcHBsaWFuY2Uu/Y29tL2Nkbi9zaG9w/L2ZpbGVzLzA1X05l/b0NoZWZfQmxhY2tf/TVMyNTk1RElTX1BI/X1JpZ2h0U2lkZV84/MDB4LmpwZz92PTE3/MDQ5NjQ0NTU",
   },
   {
     id: "steam-cleaner-s1",
@@ -30,7 +30,7 @@ const PRODUCTS = [
     availability: "In stock",
     features: ["Multi-surface heads", "Lightweight body", "Fast heat-up"],
     image:
-      "https://images.unsplash.com/photo-1527515637462-daf3f5eb764a?auto=format&fit=crop&w=700&q=80",
+      "https://imgs.search.brave.com/z-DvZybvZMFHMF71upKu6UPZxBksfOWceX-tnuYectA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zMS5r/YWVyY2hlci1tZWRp/YS5jb20vbWVkaWEv/aW1hZ2Uvc2VsZWN0/aW9uLzE3Mjk2Ni9k/MC9zdGVhbS1jbGVh/bmVyLWRlbHV4ZS5q/cGcjd2VicA",
   },
   {
     id: "vacuum-max-v7",
@@ -96,7 +96,7 @@ const PRODUCTS = [
     availability: "In stock",
     features: ["App scheduling", "Temperature presets", "Keep warm"],
     image:
-      "https://images.unsplash.com/photo-1509463531436-19fd0c21b36b?auto=format&fit=crop&w=700&q=80",
+      "https://imgs.search.brave.com/zAG5ciG-sbqp16EN9v0qfxaAirc4Y6pE7tQ8_sk5AUM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90aGVn/YWRnZXRmbG93LmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAx/Ny8xMC9TbWFydGVy/LTNyZC1HZW4taUtl/dHRsZS1TbWFydC1F/bGVjdHJpYy1LZXR0/bGUtMDIuanBn",
   },
   {
     id: "air-purifier-cloud",
@@ -118,7 +118,7 @@ const PRODUCTS = [
     availability: "In stock",
     features: ["12L capacity", "Energy efficient", "Quiet compressor"],
     image:
-      "https://images.unsplash.com/photo-1527515862127-a59d9d04d55b?auto=format&fit=crop&w=700&q=80",
+      "https://imgs.search.brave.com/xn7smZEcQ_YK9IcnssekOjS2Y3zbUxEVBB9PCsgs_yc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/dWJlcmFwcGxpYW5j/ZS5jb20vY2RuL3No/b3AvcHJvZHVjdHMv/VWJlci1BcHBsaWFu/Y2UtVWJlci1DaGls/bC1VQi1DSDEtNi1D/YW4tUGVyc29uYWwt/TWluaS1GcmlkZ2Ut/VWJlci1BcHBsaWFu/Y2UtMTYwNjQ1NDY1/MS5qcGc_dj0xNjgz/MDc5MzI5JndpZHRo/PTEwODA",
   },
   {
     id: "robot-mop-swift",
@@ -410,3 +410,37 @@ initProductDetailPage();
 initCartPage();
 initCheckoutPage();
 initSupportPage();
+
+(function() {
+  const toggle = document.querySelector('.menu-toggle');
+  const header = document.querySelector('.site-header');
+  const nav = document.getElementById('primary-nav');
+
+  if (!toggle || !header || !nav) return;
+
+  const isMobile = () => window.matchMedia('(max-width: 768px)').matches;
+  const setExpanded = (exp) => {
+    toggle.setAttribute('aria-expanded', String(exp));
+    header.classList.toggle('menu-open', !!exp);
+  };
+
+  // Ensure closed by default
+  setExpanded(false);
+
+  toggle.addEventListener('click', function() {
+    if (!isMobile()) return; // only act on phones
+    const next = toggle.getAttribute('aria-expanded') === 'false';
+    setExpanded(next);
+  });
+
+  // Close menu when resizing out of mobile
+  window.addEventListener('resize', function() {
+    if (!isMobile()) setExpanded(false);
+  });
+
+  // Close when navigating a link
+  nav.addEventListener('click', function(e) {
+    const t = e.target;
+    if (t && t.tagName === 'A' && isMobile()) setExpanded(false);
+  });
+})();

@@ -77,7 +77,8 @@ img {
 }
 
 .site-header {
-  position: sticky;
+  position: relative;
+  padding: 12px 16px; /* safe touch padding */
   top: 0;
   background: var(--color-surface);
   border-bottom: 1px solid var(--color-border);
@@ -88,20 +89,29 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--spacing-md) 0;
+  gap: 8px;
 }
 
-.logo {
-  font-weight: 700;
-  font-size: 1.2rem;
+/* Right-align logo and toggle on mobile */
+@media (max-width: 768px) {
+  .logo { margin-right: auto; padding-left: 8px; }
+  .menu-toggle { margin-left: auto; padding-right: 8px; }
 }
 
-.site-nav {
-  display: flex;
-  gap: var(--spacing-lg);
-  flex-wrap: wrap;
-  font-weight: 600;
-  justify-content: flex-end;
+/* Menu toggle visibility and style */
+.menu-toggle {
+  display: none; /* desktop hidden */
+  background: none;
+  border: 0;
+  padding: 10px; /* touch target */
+  cursor: pointer;
+}
+.menu-toggle .bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #222;
+  margin: 4px 0; /* vertical space to create three lines */
 }
 
 .header-actions {
@@ -435,6 +445,102 @@ textarea {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
+/* Mobile-first nav collapse */
+.header-inner {
+  align-items: center;
+}
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 0;
+  padding: 8px;
+  cursor: pointer;
+}
+.menu-toggle .bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #222;
+  margin: 4px 0;
+}
+.mobile-only { display: none; }
+
+/* Header spacing and layout */
+.site-header {
+  position: relative;
+  padding: 12px 16px; /* safe touch padding */
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+/* Right-align logo and toggle on mobile */
+@media (max-width: 768px) {
+  .logo { margin-right: auto; padding-left: 8px; }
+  .menu-toggle { margin-left: auto; padding-right: 8px; }
+}
+
+/* Menu toggle visibility and style */
+.menu-toggle {
+  display: none; /* desktop hidden */
+  background: none;
+  border: 0;
+  padding: 10px; /* touch target */
+  cursor: pointer;
+}
+.menu-toggle .bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #222;
+  margin: 4px 0; /* vertical space to create three lines */
+}
+.mobile-only { display: none; }
+
+/* Nav default desktop */
+.site-nav {
+  display: flex;
+  gap: 16px;
+}
+
+/* Small screens */
+@media (max-width: 768px) {
+  .mobile-only { display: inline-flex; }
+  .site-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-top: 1px solid #eee;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    display: none;
+    flex-direction: column;
+    padding: 12px 16px;
+    z-index: 1000;
+  }
+  .menu-open .site-nav { display: flex; }
+  .site-nav a { padding: 10px 8px; }
+  /* Show toggle on mobile */
+  .menu-toggle { display: inline-flex; align-items: center; justify-content: center; }
+}
+
+/* Ensure logo has safe padding on desktop too */
+.logo { padding-right: 12px; }
+
+/* Accessibility: when focus within, ensure visible on mobile */
+@media (max-width: 768px) {
+  .site-nav:focus-within { display: flex; }
+}
+
+/* Optional: animate */
+@media (max-width: 768px) {
+  .site-nav { transition: opacity 150ms ease, transform 150ms ease; }
+}
+
 @media (min-width: 900px) {
   .hero-content {
     grid-template-columns: repeat(2, 1fr);
@@ -443,7 +549,6 @@ textarea {
 
 @media (max-width: 720px) {
   .header-inner {
-    flex-direction: column;
     align-items: flex-start;
     gap: var(--spacing-sm);
   }
@@ -486,4 +591,13 @@ textarea {
   .media-img.large {
     height: 180px;
   }
+}
+
+/* Hide old header actions container */
+.header-actions { display: none !important; }
+
+/* Style actions inside mobile nav */
+@media (max-width: 768px) {
+  .nav-actions { display: flex; gap: 8px; margin-top: 8px; }
+  .nav-actions .btn { width: 100%; text-align: center; }
 }
