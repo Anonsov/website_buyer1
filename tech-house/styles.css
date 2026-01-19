@@ -104,6 +104,15 @@ img {
   justify-content: flex-end;
 }
 
+.header-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.mobile-only {
+  display: none;
+}
+
 .nav-cart {
   display: flex;
   align-items: center;
@@ -448,6 +457,14 @@ textarea {
   .hero-actions {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .header-actions {
+    width: 100%;
+  }
+
+  .mobile-only {
+    display: flex;
   }
 
   .promo-inner {
