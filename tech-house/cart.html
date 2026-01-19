@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Cart | Tech House</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">Tech House</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="support.html">Support</a>
+        <a href="cart.html" class="nav-cart">Cart <span class="cart-count" data-cart-count>0</span></a>
+      </nav>
+      <div class="header-actions mobile-only">
+        <a class="btn secondary" href="tel:+18005550123">Call</a>
+        <a class="btn primary" href="mailto:support@techhouse.com">Email</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="section">
+    <div class="container">
+      <h1>Your cart</h1>
+      <div class="cart-layout">
+        <section class="card" aria-live="polite">
+          <div id="cartItems"></div>
+        </section>
+        <aside class="card cart-summary">
+          <h2>Summary</h2>
+          <p class="summary-line">Subtotal <span id="cartSubtotal">$0.00</span></p>
+          <p class="muted">Delivery and taxes calculated at checkout.</p>
+          <a class="btn primary" href="checkout.html">Proceed to checkout</a>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Tech House</h3>
+        <p>Trusted home appliance experts with in-store pickup and fast delivery.</p>
+      </div>
+      <div>
+        <h4>Policies</h4>
+        <ul>
+          <li><a href="support.html#delivery">Delivery policy</a></li>
+          <li><a href="support.html#returns">Returns policy</a></li>
+          <li><a href="support.html#warranty">Warranty policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Opening hours</h4>
+        <p>Mon–Sat: 9:00 AM – 8:00 PM</p>
+        <p>Sun: 10:00 AM – 6:00 PM</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
