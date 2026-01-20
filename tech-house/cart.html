@@ -1,44 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Cart | Tech House</title>
+  <title>Tech House | Savat</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main">Asosiy tarkibga o'tish</a>
   <header class="site-header">
     <div class="container header-inner">
       <a class="logo" href="index.html">Tech House</a>
-      <nav class="site-nav" aria-label="Main">
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="support.html">Support</a>
-        <a href="cart.html" class="nav-cart">Cart <span class="cart-count" data-cart-count>0</span></a>
+      <nav class="site-nav" id="primary-nav" aria-label="Asosiy">
+        <a href="index.html">Bosh sahifa</a>
+        <a href="products.html">Mahsulotlar</a>
+        <a href="support.html">Yordam</a>
+        <a href="cart.html" class="nav-cart">Savat <span class="cart-count" data-cart-count>0</span></a>
+        <div class="nav-actions mobile-only">
+          <a class="btn secondary" href="tel:+18005550123">Qo'ng'iroq qiling</a>
+          <a class="btn primary" href="mailto:support@techhouse.com">E-pochta</a>
+        </div>
       </nav>
-      <div class="header-actions mobile-only">
-        <a class="btn secondary" href="tel:+18005550123">Call</a>
-        <a class="btn primary" href="mailto:support@techhouse.com">Email</a>
-      </div>
     </div>
   </header>
 
   <main id="main" class="section">
     <div class="container">
-      <h1>Your cart</h1>
+      <h1>Savatingiz</h1>
       <div class="cart-layout">
         <section class="card" aria-live="polite">
           <div id="cartItems"></div>
         </section>
         <aside class="card cart-summary">
-          <h2>Summary</h2>
-          <p class="summary-line">Subtotal <span id="cartSubtotal">$0.00</span></p>
-          <p class="muted">Delivery and taxes calculated at checkout.</p>
-          <a class="btn primary" href="checkout.html">Proceed to checkout</a>
+          <h2>Hisob-kitob</h2>
+          <p class="summary-line">Jami <span id="cartSubtotal">0 so'm</span></p>
+          <p class="muted">Yetkazib berish va soliqlar rasmiylashtirishda hisoblanadi.</p>
+          <a class="btn primary" href="checkout.html">Buyurtmani rasmiylashtirish</a>
         </aside>
       </div>
     </div>
@@ -48,20 +48,20 @@
     <div class="container footer-grid">
       <div>
         <h3>Tech House</h3>
-        <p>Trusted home appliance experts with in-store pickup and fast delivery.</p>
+        <p>Ishonchli maishiy texnika mutaxassislari, do‘kondan olib ketish va tez yetkazib berish.</p>
       </div>
       <div>
-        <h4>Policies</h4>
+        <h4>Siyosatlar</h4>
         <ul>
-          <li><a href="support.html#delivery">Delivery policy</a></li>
-          <li><a href="support.html#returns">Returns policy</a></li>
-          <li><a href="support.html#warranty">Warranty policy</a></li>
+          <li><a href="support.html#delivery">Yetkazib berish siyosati</a></li>
+          <li><a href="support.html#returns">Qaytarish siyosati</a></li>
+          <li><a href="support.html#warranty">Kafolat siyosati</a></li>
         </ul>
       </div>
       <div>
-        <h4>Opening hours</h4>
-        <p>Mon–Sat: 9:00 AM – 8:00 PM</p>
-        <p>Sun: 10:00 AM – 6:00 PM</p>
+        <h4>Ish vaqti</h4>
+        <p>Dushanba–Shanba: 9:00 – 20:00</p>
+        <p>Yakshanba: 10:00 – 18:00</p>
       </div>
     </div>
   </footer>

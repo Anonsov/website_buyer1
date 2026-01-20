@@ -1,106 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Checkout | Tech House</title>
+  <title>Tech House | Buyurtmani rasmiylashtirish</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main">Asosiy tarkibga o'tish</a>
   <header class="site-header">
     <div class="container header-inner">
       <a class="logo" href="index.html">Tech House</a>
-      <nav class="site-nav" aria-label="Main">
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="support.html">Support</a>
-        <a href="cart.html" class="nav-cart">Cart <span class="cart-count" data-cart-count>0</span></a>
+      <nav class="site-nav" aria-label="Asosiy">
+        <a href="index.html">Bosh sahifa</a>
+        <a href="products.html">Mahsulotlar</a>
+        <a href="support.html">Yordam</a>
+        <a href="cart.html" class="nav-cart">Savat <span class="cart-count" data-cart-count>0</span></a>
       </nav>
       <div class="header-actions mobile-only">
-        <a class="btn secondary" href="tel:+18005550123">Call</a>
-        <a class="btn primary" href="mailto:support@techhouse.com">Email</a>
+        <a class="btn secondary" href="tel:+18005550123">Qo'ng'iroq qiling</a>
+        <a class="btn primary" href="mailto:support@techhouse.com">E-pochta</a>
       </div>
     </div>
   </header>
 
   <main id="main" class="section">
     <div class="container">
-      <h1>Checkout</h1>
+      <h1>Buyurtmani rasmiylashtirish</h1>
       <div class="checkout-layout">
         <form class="card" id="checkoutForm">
           <fieldset>
-            <legend>Contact details</legend>
+            <legend>Kontakt ma'lumotlari</legend>
             <label class="field">
-              <span class="field-label">Full name</span>
+              <span class="field-label">To'liq ism</span>
               <input type="text" name="fullName" required />
             </label>
             <label class="field">
-              <span class="field-label">Email</span>
+              <span class="field-label">E-pochta</span>
               <input type="email" name="email" required />
             </label>
             <label class="field">
-              <span class="field-label">Phone</span>
+              <span class="field-label">Telefon</span>
               <input type="tel" name="phone" required />
             </label>
           </fieldset>
 
           <fieldset>
-            <legend>Fulfillment</legend>
+            <legend>Yetkazib berish</legend>
             <div class="radio-group">
-              <label><input type="radio" name="fulfillment" value="delivery" checked /> Delivery</label>
-              <label><input type="radio" name="fulfillment" value="pickup" /> In-store pickup</label>
+              <label><input type="radio" name="fulfillment" value="delivery" checked /> Yetkazib berish</label>
+              <label><input type="radio" name="fulfillment" value="pickup" /> Do'kondan olib ketish</label>
             </div>
             <div id="deliveryFields">
               <label class="field">
-                <span class="field-label">Delivery address</span>
+                <span class="field-label">Yetkazib berish manzili</span>
                 <input type="text" name="address" required />
               </label>
               <label class="field">
-                <span class="field-label">City</span>
+                <span class="field-label">Shahar</span>
                 <input type="text" name="city" required />
               </label>
             </div>
             <div id="pickupFields" class="hidden">
               <label class="field">
-                <span class="field-label">Pickup store</span>
+                <span class="field-label">Olib ketiladigan do'kon</span>
                 <select name="pickupStore">
-                  <option value="">Select a store</option>
-                  <option>Downtown Tech House</option>
-                  <option>Riverside Tech House</option>
+                  <option value="">Do'koni tanlang</option>
+                  <option>Shahar markazidagi Tech House</option>
+                  <option>Qirg'oq bo'yidagi Tech House</option>
                 </select>
               </label>
             </div>
           </fieldset>
 
           <fieldset>
-            <legend>Payment</legend>
+            <legend>To'lov</legend>
             <div class="radio-group">
-              <label><input type="radio" name="payment" value="card" checked /> Card</label>
-              <label><input type="radio" name="payment" value="wallet" /> Digital wallet</label>
-              <label><input type="radio" name="payment" value="store" /> Pay in store</label>
+              <label><input type="radio" name="payment" value="card" checked /> Kartochka</label>
+              <label><input type="radio" name="payment" value="wallet" /> Raqamli hamyon</label>
+              <label><input type="radio" name="payment" value="store" /> Do'konda to'lash</label>
             </div>
             <label class="field">
-              <span class="field-label">Order notes (optional)</span>
+              <span class="field-label">Buyurtma izohlari (ixtiyoriy)</span>
               <textarea name="notes" rows="3"></textarea>
             </label>
           </fieldset>
 
-          <button class="btn primary" type="submit">Place order</button>
+          <button class="btn primary" type="submit">Buyurtmani tasdiqlash</button>
           <div class="confirmation hidden" id="orderConfirmation" role="status"></div>
         </form>
 
         <aside class="card">
-          <h2>Policy reminders</h2>
+          <h2>Siyosat eslatmalari</h2>
           <ul class="muted">
-            <li>Delivery in 2–5 business days.</li>
-            <li>30-day return window on unopened items.</li>
-            <li>1-year warranty on all appliances.</li>
+            <li>Yetkazib berish 2–5 ish kuni ichida.</li>
+            <li>Yopilmagan mahsulotlar uchun 30 kunlik qaytarish muddati.</li>
+            <li>Barcha jihozlar uchun 1 yillik kafolat.</li>
           </ul>
-          <p class="muted">Need help? <a href="support.html">Contact support</a>.</p>
+          <p class="muted">Yordam kerakmi? <a href="support.html">Texnik yordam bilan bog'laning</a>.</p>
         </aside>
       </div>
     </div>
@@ -110,20 +110,20 @@
     <div class="container footer-grid">
       <div>
         <h3>Tech House</h3>
-        <p>Trusted home appliance experts with in-store pickup and fast delivery.</p>
+        <p>Ishonchli maishiy texnika mutaxassislari, do‘kondan olib ketish va tez yetkazib berish.</p>
       </div>
       <div>
-        <h4>Policies</h4>
+        <h4>Siyosatlar</h4>
         <ul>
-          <li><a href="support.html#delivery">Delivery policy</a></li>
-          <li><a href="support.html#returns">Returns policy</a></li>
-          <li><a href="support.html#warranty">Warranty policy</a></li>
+          <li><a href="support.html#delivery">Yetkazib berish siyosati</a></li>
+          <li><a href="support.html#returns">Qaytarish siyosati</a></li>
+          <li><a href="support.html#warranty">Kafolat siyosati</a></li>
         </ul>
       </div>
       <div>
-        <h4>Opening hours</h4>
-        <p>Mon–Sat: 9:00 AM – 8:00 PM</p>
-        <p>Sun: 10:00 AM – 6:00 PM</p>
+        <h4>Ish vaqti</h4>
+        <p>Dushanba–Shanba: 9:00 – 20:00</p>
+        <p>Yakshanba: 10:00 – 18:00</p>
       </div>
     </div>
   </footer>
