@@ -29,6 +29,13 @@ body {
   color: var(--color-text);
   background: var(--color-bg);
   line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
 }
 
 a {
@@ -90,6 +97,12 @@ img {
   align-items: center;
   justify-content: space-between;
   gap: 8px;
+}
+
+/* Ensure header row stays intact */
+.header-inner { flex-wrap: nowrap; }
+@media (max-width: 720px) {
+  .header-inner { align-items: center; gap: var(--spacing-sm); }
 }
 
 /* Right-align logo and toggle on mobile */
@@ -244,6 +257,7 @@ img {
 }
 
 .btn {
+  margin-top: 10px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -430,115 +444,76 @@ textarea {
 }
 
 .site-footer {
-  background: #0f172a;
-  color: #e2e8f0;
-  padding: var(--spacing-xl) 0;
+  background: #0f1115;
+  color: #e7e9ee;
+  border-top: 1px solid #1b1f2a;
+  margin-top: auto;
 }
 
-.site-footer a {
-  color: inherit;
+.site-footer .container {
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 
 .footer-grid {
   display: grid;
-  gap: var(--spacing-lg);
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 24px;
+  align-items: start;
 }
 
-/* Mobile-first nav collapse */
-.header-inner {
-  align-items: center;
-}
-.menu-toggle {
-  display: none;
-  background: none;
-  border: 0;
-  padding: 8px;
-  cursor: pointer;
-}
-.menu-toggle .bar {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background: #222;
-  margin: 4px 0;
-}
-.mobile-only { display: none; }
-
-/* Header spacing and layout */
-.site-header {
-  position: relative;
-  padding: 12px 16px; /* safe touch padding */
-}
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
+.site-footer h3,
+.site-footer h4 {
+  color: #ffffff;
+  font-weight: 600;
+  margin: 0 0 8px;
 }
 
-/* Right-align logo and toggle on mobile */
-@media (max-width: 768px) {
-  .logo { margin-right: auto; padding-left: 8px; }
-  .menu-toggle { margin-left: auto; padding-right: 8px; }
+.site-footer p {
+  margin: 0 0 8px;
+  color: #c5c8ce;
 }
 
-/* Menu toggle visibility and style */
-.menu-toggle {
-  display: none; /* desktop hidden */
-  background: none;
-  border: 0;
-  padding: 10px; /* touch target */
-  cursor: pointer;
+.site-footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-.menu-toggle .bar {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: #222;
-  margin: 4px 0; /* vertical space to create three lines */
-}
-.mobile-only { display: none; }
 
-/* Nav default desktop */
+.site-footer li + li { margin-top: 6px; }
+
+.site-footer a {
+  color: #e7e9ee;
+  text-decoration: none;
+  border-radius: 6px;
+  padding: 2px 0;
+}
+
+.site-footer a:hover,
+.site-footer a:focus {
+  text-decoration: underline;
+  outline: none;
+}
+
+/* Keep nav items in one line on desktop */
 .site-nav {
   display: flex;
-  gap: 16px;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex-wrap: nowrap;
 }
+.site-nav a { white-space: nowrap; }
 
-/* Small screens */
 @media (max-width: 768px) {
-  .mobile-only { display: inline-flex; }
-  .site-nav {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: #fff;
-    border-top: 1px solid #eee;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-    display: none;
-    flex-direction: column;
-    padding: 12px 16px;
-    z-index: 1000;
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    text-align: center;
   }
-  .menu-open .site-nav { display: flex; }
-  .site-nav a { padding: 10px 8px; }
-  /* Show toggle on mobile */
-  .menu-toggle { display: inline-flex; align-items: center; justify-content: center; }
-}
-
-/* Ensure logo has safe padding on desktop too */
-.logo { padding-right: 12px; }
-
-/* Accessibility: when focus within, ensure visible on mobile */
-@media (max-width: 768px) {
-  .site-nav:focus-within { display: flex; }
-}
-
-/* Optional: animate */
-@media (max-width: 768px) {
-  .site-nav { transition: opacity 150ms ease, transform 150ms ease; }
+  .site-footer .container {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
 }
 
 @media (min-width: 900px) {
@@ -547,16 +522,85 @@ textarea {
   }
 }
 
+/* Advanced checkout layout improvements */
+.checkout-layout {
+  grid-template-columns: minmax(320px, 1.2fr) 0.8fr;
+}
+
+/* Make the summary sidebar sticky on larger screens */
+@media (min-width: 900px) {
+  .checkout-layout aside.card {
+    position: sticky;
+    top: 88px; /* below header */
+  }
+}
+
+/* Two-column fields where suitable */
+.checkout-form {
+  display: grid;
+  gap: var(--spacing-lg);
+}
+.checkout-form fieldset {
+  display: grid;
+  gap: var(--spacing-md);
+}
+.checkout-form fieldset .field {
+  display: grid;
+  gap: var(--spacing-xs);
+}
+
+/* Group some fields side-by-side on wide screens */
+@media (min-width: 720px) {
+  #deliveryFields { grid-template-columns: repeat(2, 1fr); }
+  #deliveryFields .field { grid-column: span 1; }
+  /* notes textarea stays full width */
+}
+
+/* Inputs aesthetic improvements */
+.checkout-form input,
+.checkout-form select,
+.checkout-form textarea {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+.checkout-form input:hover,
+.checkout-form select:hover,
+.checkout-form textarea:hover {
+  border-color: #cbd5e1;
+}
+.checkout-form input:focus,
+.checkout-form select:focus,
+.checkout-form textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(32, 87, 245, 0.12);
+}
+
+/* Button: prominent and separated from inputs */
+.checkout-form .btn.primary {
+  width: 100%;
+  margin-top: var(--spacing-lg);
+  padding: 0.8rem 1.2rem;
+}
+
+/* Card subtle elevation */
+.checkout-layout .card {
+  box-shadow: var(--shadow-sm);
+}
+
+/* Radio group spacing */
+.checkout-form .radio-group {
+  gap: var(--spacing-sm);
+}
+
 @media (max-width: 720px) {
   .header-inner {
-    align-items: flex-start;
+    align-items: center;
     gap: var(--spacing-sm);
   }
 
   .site-nav {
-    width: 100%;
     justify-content: flex-start;
-    gap: var(--spacing-md);
   }
 
   .hero-actions {
@@ -591,6 +635,9 @@ textarea {
   .media-img.large {
     height: 180px;
   }
+
+  .checkout-layout { grid-template-columns: 1fr; }
+  .checkout-form fieldset { padding: var(--spacing-sm); }
 }
 
 /* Hide old header actions container */
@@ -601,3 +648,78 @@ textarea {
   .nav-actions { display: flex; gap: 8px; margin-top: 8px; }
   .nav-actions .btn { width: 100%; text-align: center; }
 }
+
+/* Mobile nav dropdown: hidden by default, stacked when open */
+@media (max-width: 768px) {
+  .mobile-only { display: inline-flex; }
+  .menu-toggle { display: inline-flex; align-items: center; justify-content: center; }
+  .site-header { position: relative; }
+  .site-nav {
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    background: #fff;
+    border-top: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+    display: none;
+    flex-direction: column;
+    padding: 12px 16px;
+    z-index: 1000;
+  }
+  .menu-open .site-nav { display: flex; }
+  .site-nav a { padding: 10px 8px; white-space: normal; }
+}
+
+/* Layout: make footer stick to bottom */
+html, body { height: 100%; }
+body { min-height: 100vh; display: flex; flex-direction: column; }
+main { flex: 1 0 auto; }
+.site-footer { margin-top: auto; }
+
+/* Checkout form enhancements */
+.checkout-layout {
+  align-items: start;
+}
+.checkout-layout .card {
+  padding: calc(var(--spacing-lg) + 4px);
+}
+.checkout-form fieldset {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  margin-bottom: calc(var(--spacing-lg) + 4px);
+  background: var(--color-surface);
+}
+.checkout-form legend {
+  padding: 0 var(--spacing-xs);
+  font-weight: 700;
+  color: var(--color-text);
+}
+.checkout-form .field {
+  margin-top: var(--spacing-sm);
+}
+.checkout-form input,
+.checkout-form select,
+.checkout-form textarea {
+  background: #fff;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.checkout-form input:focus,
+.checkout-form select:focus,
+.checkout-form textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(32, 87, 245, 0.12);
+}
+.checkout-form .radio-group {
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+.checkout-form .btn.primary {
+  width: 100%;
+  margin-top: var(--spacing-lg);
+}
+
+/* Sidebar notes card tweaks */
+.checkout-layout aside.card h2 { margin-top: 0; }
+.checkout-layout aside.card .muted { margin: var(--spacing-sm) 0; }

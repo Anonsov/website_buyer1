@@ -14,16 +14,19 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="logo" href="index.html">Tech House</a>
-      <nav class="site-nav" aria-label="Asosiy">
+      <button class="menu-toggle mobile-only" aria-controls="primary-nav" aria-expanded="false" aria-label="Menyuni ochish/yopish">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+      <nav class="site-nav" id="primary-nav" aria-label="Asosiy">
         <a href="index.html">Bosh sahifa</a>
         <a href="products.html">Mahsulotlar</a>
         <a href="support.html">Yordam</a>
         <a href="cart.html" class="nav-cart">Savat <span class="cart-count" data-cart-count>0</span></a>
+        <div class="nav-actions mobile-only">
+          <a class="btn secondary" href="tel:+18005550123">Qo'ng'iroq qiling</a>
+          <a class="btn primary" href="mailto:support@techhouse.com">E-pochta</a>
+        </div>
       </nav>
-      <div class="header-actions mobile-only">
-        <a class="btn secondary" href="tel:+18005550123">Qo'ng'iroq qiling</a>
-        <a class="btn primary" href="mailto:support@techhouse.com">E-pochta</a>
-      </div>
     </div>
   </header>
 
@@ -54,11 +57,11 @@
           <span class="field-label">Kategoriya</span>
           <select id="categoryFilter">
             <option value="all">Barcha kategoriyalar</option>
-            <option>Oshxona texnikasi</option>
-            <option>Tozalash qurilmalari</option>
-            <option>Isitish va sovitish</option>
-            <option>Shaxsiy parvarish</option>
-            <option>Aqlli uy</option>
+            <option value="Oshxona texnikasi">Oshxona texnikasi</option>
+            <option value="Tozalash qurilmalari">Tozalash qurilmalari</option>
+            <option value="Isitish va sovitish">Isitish va sovitish</option>
+            <option value="Shaxsiy parvarish">Shaxsiy parvarish</option>
+            <option value="Aqlli uy">Aqlli uy</option>
           </select>
         </label>
       </div>
@@ -81,13 +84,20 @@
           <li><a href="support.html#delivery">Yetkazib berish siyosati</a></li>
           <li><a href="support.html#returns">Qaytarish siyosati</a></li>
           <li><a href="support.html#warranty">Kafolat siyosati</a></li>
+          <li><a href="privacy.html">Maxfiylik siyosati</a></li>
         </ul>
       </div>
       <div>
-        <h4>Ish vaqti</h4>
-        <p>Dushanba–Shanba: 9:00 – 20:00</p>
-        <p>Yakshanba: 10:00 – 18:00</p>
+        <h4>Aloqa</h4>
+        <ul>
+          <li>📞 <a href="tel:+18005550123">+1 (800) 555-0123</a></li>
+          <li>✉️ <a href="mailto:support@techhouse.com">support@techhouse.com</a></li>
+          <li>🌐 <a href="index.html#contact">Biz bilan bog'lanish</a></li>
+        </ul>
       </div>
+    </div>
+    <div class="container">
+      <p class="copyright">&copy; 2023 Tech House. Barcha huquqlar himoyalangan.</p>
     </div>
   </footer>
 

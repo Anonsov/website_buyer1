@@ -431,6 +431,9 @@ initSupportPage();
   const nav = document.getElementById('primary-nav');
 
   if (!toggle || !header || !nav) return;
+  // Ensure header has proper class state on load
+  header.classList.remove('menu-open');
+  toggle.setAttribute('aria-expanded', 'false');
 
   const isMobile = () => window.matchMedia('(max-width: 768px)').matches;
   const setExpanded = (exp) => {
